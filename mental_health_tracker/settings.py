@@ -23,7 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&0lf5uu+ihxqi^d!bxd848^@lah9g7n^^aa@)m*q8+p=0e@=%a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+import os
+PRODUCTION = os.getenv("PRODUCTION", False)
+DEBUG = not PRODUCTION
+
 
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1","abraham-jordy-mentalhealthtracker3.pbp.cs.ui.ac.id"]
